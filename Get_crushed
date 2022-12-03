@@ -1,0 +1,81 @@
+function teleportTO(placeCFrame)
+    local plyr = game.Players.LocalPlayer;
+    if plyr.Character then
+        plyr.Character.HumanoidRootPart.CFrame = placeCFrame;
+    end
+end
+
+getgenv().AutoFarm = true;
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Crushed by speeding wall--by jude/rev", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "AutoFarm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+Tab:AddToggle({
+	Name = "AutoFarm",
+	Default = (bool),
+	Callback = function(bool)
+		getgenv().AutoFarm = bool
+		print(bool)
+		if bool then
+		AutoFarm()
+		end
+	end    
+    
+})
+
+function AutoFarm()
+    while getgenv().AutoFarm == true do
+                  		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-139.082031, 16.3098545, 237.155304, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+                  		wait()
+                  		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-439.762268, 16.3393345, 417.383698, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+                  		wait()
+                  		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1041.06726, 16.3217564, 412.603729, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+                  		wait()
+                  		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-739.147522, 16.3198643, 231.56601, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+                  		wait()
+                  		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1041.84729, 24.021759, 410.903748, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+                  		wait()
+                  		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-441.247253, 24.021759, 411.503754, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+                  		wait()
+                  		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-737.947266, 24.021759, 238.003754, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+                  		wait()
+                  		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-139.147278, 24.021759, 238.203751, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+                  		wait(0.5)
+                  		teleportTO(game:GetService("Workspace").Map.Tunnel.Wall.CFrame)
+                  		wait(1)
+                  		teleportTO(game:GetService("Workspace").Map.Spawn.SpawnLocation.CFrame)
+                  		wait(3)
+
+end
+end
+
+local Tab = Window:MakeTab({
+	Name = "Badges",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Get all badges",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1466, 2.57399416, 181, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+      		wait(1)
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-591.614258, 121.809898, 327.871643, -0.434773207, -0, -0.900540352, 0, -1.00000048, 0, -0.900540352, 0, 0.43477273)
+      		wait(8)
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(55805.1328, 670.887573, -487.503906, 0.700624108, 0, 0.71353054, 0, 1, 0, -0.71353054, 0, 0.700624108)
+      		wait(8)
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(19258.1523, 9222.85645, -7636.50928, -0.999791145, 0, 0.020457251, 0, 1, 0, -0.020457251, 0, -0.999791145)
+      		wait(8)
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(274.699005, -72.5709991, 322.894989, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+      		wait(8)
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-18704.2305, 422.093079, 2288.79639, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	end    
+})
