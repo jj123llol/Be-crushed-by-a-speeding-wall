@@ -86,6 +86,20 @@ Tab:AddButton({
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-18704.2305, 422.093079, 2288.79639, -1, 0, 0, 0, 1, 0, 0, 0, -1)
 	end    
 })
+
+Tab:AddParagraph("READ ME","ONLY USE WHEN THE EVENT IS HAPPENING THEN WAIT FOR IT TO END")
+
+Tab:AddButton({
+	Name = "Teleport to end of tower",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3316.64648, 619.59668, 11376.7998, 0.957082033, -6.63216753e-08, -0.289817184, 8.12791185e-08, 1, 3.95736066e-08, 0.289817184, -6.14312725e-08, 0.957082033)
+  	end    
+})
+
+
+
+
+
 local Tab = Window:MakeTab({
 	Name = "Trolling",
 	Icon = "rbxassetid://4483345998",
@@ -116,15 +130,9 @@ function Spambutton()
 
                   		
                   		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1412.99841, 26.4987583, 325.423065, 0, 1, 0, 1, 0, 0, 0, 0, -1)
-                  		wait()
-                  		if game:GetService("ReplicatedStorage").Remotes.GetOwned:InvokeServer() then
-                  		    wait()
+                  		
 
                   		
-                  		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1412.99841, 26.4987583, 325.423065, 0, 1, 0, 1, 0, 0, 0, 0, -1)
-                  		wait()
-                  		
-end
 end
 end
 end
