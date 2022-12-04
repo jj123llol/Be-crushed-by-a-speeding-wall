@@ -92,6 +92,8 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+Tab:AddParagraph("hey","Tabbing out of roblox breaks it,Just uncheck and recheck if that happens")
+Tab:AddParagraph("hey","If it stops spamming it just check and recheck it")
 
 Tab:AddToggle({
 	Name = "Spam button",
@@ -115,7 +117,14 @@ function Spambutton()
                   		
                   		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1412.99841, 26.4987583, 325.423065, 0, 1, 0, 1, 0, 0, 0, 0, -1)
                   		wait()
+                  		if game:GetService("ReplicatedStorage").Remotes.GetOwned:InvokeServer() then
+                  		    wait()
+
                   		
+                  		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1412.99841, 26.4987583, 325.423065, 0, 1, 0, 1, 0, 0, 0, 0, -1)
+                  		wait()
+                  		
+end
 end
 end
 end
