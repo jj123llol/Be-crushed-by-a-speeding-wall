@@ -224,6 +224,56 @@ wait(6)
   	end    
 })
 
+Tab:AddButton({
+	Name = "Delete HumanoidRootPart",
+	Callback = function()
+      		local chara = game.Players.LocalPlayer.Character
+            local origin = chara.HumanoidRootPart.CFrame
+
+
+
+
+local c = game.Players.LocalPlayer.Character
+c.Parent = nil
+c.HumanoidRootPart:Destroy()
+c.Parent = game.workspace
+
+
+wait(6)
+            chara.HumanoidRootPart.CFrame = origin
+  	end    
+})
+Tab:AddButton({
+	Name = "Faster reset",
+	Callback = function()
+      	local chara = game.Players.LocalPlayer.Character
+            local origin = chara.HumanoidRootPart.CFrame
+
+
+
+
+local c = game.Players.LocalPlayer.Character
+c.Parent = nil
+c.Head:Destroy()
+c.Parent = game.workspace
+
+
+wait(6)
+            chara.HumanoidRootPart.CFrame = origin
+  	end    
+})
+
+        
+
+
+
+
+
+
+
+
+
+
 
 
 function SpamDie()
