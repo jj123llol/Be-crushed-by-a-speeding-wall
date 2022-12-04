@@ -1,9 +1,16 @@
+
+
+
+
+
 function teleportTO(placeCFrame)
     local plyr = game.Players.LocalPlayer;
     if plyr.Character then
         plyr.Character.HumanoidRootPart.CFrame = placeCFrame;
     end
 end
+
+getgenv().Spambutton = true;
 
 getgenv().AutoFarm = true;
 
@@ -79,3 +86,36 @@ Tab:AddButton({
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-18704.2305, 422.093079, 2288.79639, -1, 0, 0, 0, 1, 0, 0, 0, -1)
 	end    
 })
+local Tab = Window:MakeTab({
+	Name = "Trolling",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+Tab:AddToggle({
+	Name = "Spam button",
+	Default = (bool),
+	Callback = function(bool)
+			getgenv().Spambutton = bool
+		print(bool)
+		if bool then
+		Spambutton()
+		end
+	end    
+})
+
+
+function Spambutton()
+    while getgenv().Spambutton == true do
+                  		
+                  		if game:GetService("ReplicatedStorage").Remotes.GetOwned:InvokeServer() then
+                  		    wait()
+
+                  		
+                  		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1412.99841, 26.4987583, 325.423065, 0, 1, 0, 1, 0, 0, 0, 0, -1)
+                  		wait()
+                  		
+end
+end
+end
