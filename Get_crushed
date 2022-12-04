@@ -11,6 +11,7 @@ function teleportTO(placeCFrame)
 end
 getgenv().SpamDie = true;
 getgenv().Spambutton = true;
+getgenv().DieAfter = true;
 
 getgenv().AutoFarm = true;
 
@@ -63,8 +64,24 @@ Tab:AddButton({
                   		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-139.147278, 24.021759, 238.203751, 1, 0, 0, 0, 1, 0, 0, 0, 1)
                   		wait()
             chara.HumanoidRootPart.CFrame = origin
-  	end    
+               if getgenv().DieAfter == true then DieAfter()
+                
+               end
+	end   
+            })
+        Tab:AddToggle({
+	Name = "Die after AutoFarm one time",
+	Default = (bool),
+	Callback = function(bool)
+		getgenv().DieAfter = bool
+		print(bool)
+		if bool then
+		print "hi"
+		end
+	end    
 })
+        
+
 
 Tab:AddToggle({
 	Name = "AutoFarm deaths",
@@ -243,6 +260,16 @@ wait(6)
             chara.HumanoidRootPart.CFrame = origin
   	end    
 })
+
+Tab:AddButton({
+	Name = "Sit the fuck down",
+	Callback = function()
+      	game.Players.LocalPlayer.Character.Humanoid.Sit = true
+  	end    
+})
+
+
+
 Tab:AddButton({
 	Name = "Faster reset",
 	Callback = function()
@@ -292,4 +319,20 @@ function SpamDie()
 end
 end
 end
+end
+
+
+
+function DieAfter()
+    if getgenv().DieAfter == true then do
+                teleportTO(game:GetService("Workspace").Map.Tunnel.Wall.CFrame)
+    end
+    end
+        
+
+
+
+
+
+
 end
