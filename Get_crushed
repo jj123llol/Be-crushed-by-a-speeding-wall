@@ -122,6 +122,17 @@ Tab:AddToggle({
 })
 
 
+Tab:AddButton({
+    Name = "Press button once-CREDITS TO AmNoob FOR HELP",
+    Callback = function()
+             local chara = game.Players.LocalPlayer.Character
+            local origin = chara.HumanoidRootPart.CFrame
+            chara.HumanoidRootPart.CFrame = CFrame.new(-1412.99841, 26.4987583, 325.423065, 0, 1, 0, 1, 0, 0, 0, 0, -1)
+            wait(.5)
+            chara.HumanoidRootPart.CFrame = origin
+      end
+})
+
 function Spambutton()
     while getgenv().Spambutton == true do
                   		
