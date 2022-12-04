@@ -9,7 +9,7 @@ function teleportTO(placeCFrame)
         plyr.Character.HumanoidRootPart.CFrame = placeCFrame;
     end
 end
-
+getgenv().SpamDie = true;
 getgenv().Spambutton = true;
 
 getgenv().AutoFarm = true;
@@ -42,6 +42,10 @@ Tab:AddToggle({
 Tab:AddButton({
 	Name = "AutoFarm one time",
 	Callback = function()
+      		local chara = game.Players.LocalPlayer.Character
+            local origin = chara.HumanoidRootPart.CFrame
+      		
+      		
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-139.082031, 16.3098545, 237.155304, 0, 0, -1, 0, 1, 0, 1, 0, 0)
                   		wait()
                   		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-439.762268, 16.3393345, 417.383698, 0, 0, -1, 0, 1, 0, 1, 0, 0)
@@ -57,9 +61,22 @@ Tab:AddButton({
                   		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-737.947266, 24.021759, 238.003754, 1, 0, 0, 0, 1, 0, 0, 0, 1)
                   		wait()
                   		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-139.147278, 24.021759, 238.203751, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-                  		wait(0.5)
-                  		teleportTO(game:GetService("Workspace").Map.Tunnel.Wall.CFrame)
+                  		wait()
+            chara.HumanoidRootPart.CFrame = origin
   	end    
+})
+
+Tab:AddToggle({
+	Name = "AutoFarm deaths",
+	Default = (bool),
+	Callback = function(bool)
+		getgenv().SpamDie = bool
+		print(bool)
+		if bool then
+		SpamDie()
+		end
+	end    
+    
 })
 
 
@@ -181,6 +198,48 @@ function Spambutton()
                   		
 
                   		
+end
+end
+end
+
+
+
+local Tab = Window:MakeTab({
+	Name = "Random",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Reset",
+	Callback = function()
+      		local chara = game.Players.LocalPlayer.Character
+            local origin = chara.HumanoidRootPart.CFrame
+            wait(0.6)
+teleportTO(game:GetService("Workspace").Map.Tunnel.Wall.CFrame)
+            
+            
+wait(6)
+            chara.HumanoidRootPart.CFrame = origin
+  	end    
+})
+
+
+
+function SpamDie()
+    while getgenv().SpamDie == true do
+              if game:GetService("ReplicatedStorage").Remotes.GetOwned:InvokeServer() then
+                  wait(1)
+                  if game:GetService("ReplicatedStorage").Remotes.GetOwned:InvokeServer() then
+                  		    
+              
+              
+              
+              wait()
+              
+              teleportTO(game:GetService("Workspace").Map.Tunnel.Wall.CFrame) 
+              
+end
 end
 end
 end
